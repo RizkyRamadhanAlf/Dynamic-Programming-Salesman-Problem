@@ -368,7 +368,8 @@
         for (let j = 0; j < cityCount; j++) {
           const dx = cities[i].x - cities[j].x;
           const dy = cities[i].y - cities[j].y;
-          dist[i][j] = Math.round(Math.sqrt(dx * dx + dy * dy));
+          const rawDistance = Math.sqrt(dx * dx + dy * dy);
+          dist[i][j] = Math.round(rawDistance / 10);
         }
       }
     }
